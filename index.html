@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddhesh Dandekar - Salesforce Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        .glass-effect {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-text {
+            text-shadow: 0 0 4px #10b981, 0 0 10px #10b981, 0 0 20px #10b981;
+        }
+        .section-title {
+            border-bottom: 2px solid #10b981;
+            padding-bottom: 0.5rem;
+        }
+        .animated-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .animated-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hero-text-animation {
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-effect">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white hover:text-emerald-400 transition-colors">Siddhesh Dandekar</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-slate-300 hover:text-emerald-400 transition-colors">About</a>
+                <a href="#experience" class="text-slate-300 hover:text-emerald-400 transition-colors">Experience</a>
+                <a href="#projects" class="text-slate-300 hover:text-emerald-400 transition-colors">Projects</a>
+                <a href="#skills" class="text-slate-300 hover:text-emerald-400 transition-colors">Skills</a>
+                <a href="#passions" class="text-slate-300 hover:text-emerald-400 transition-colors">Passions</a>
+                <a href="#contact" class="text-slate-300 hover:text-emerald-400 transition-colors">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-slate-300 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 glass-effect">
+            <a href="#about" class="block py-2 text-slate-300 hover:text-emerald-400">About</a>
+            <a href="#experience" class="block py-2 text-slate-300 hover:text-emerald-400">Experience</a>
+            <a href="#projects" class="block py-2 text-slate-300 hover:text-emerald-400">Projects</a>
+            <a href="#skills" class="block py-2 text-slate-300 hover:text-emerald-400">Skills</a>
+            <a href="#passions" class="block py-2 text-slate-300 hover:text-emerald-400">Passions</a>
+            <a href="#contact" class="block py-2 text-slate-300 hover:text-emerald-400">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 pt-24 relative z-10">
+
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center">
+            <div class="grid md:grid-cols-2 gap-12 items-center hero-text-animation">
+                <div class="space-y-6">
+                    <h1 class="text-4xl md:text-6xl font-bold">
+                        Hi, I'm <span class="text-emerald-400 neon-text">Siddhesh</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-slate-300">A Senior Salesforce Developer & Architect.</p>
+                    <p class="text-slate-400">
+                        I specialize in building and optimizing Salesforce applications to drive business efficiency and growth. With extensive experience across Sales, Service, and Experience Clouds, I deliver robust and scalable solutions.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="mailto:sdandek2@binghamton.edu" class="bg-emerald-500 text-white px-6 py-3 rounded-md hover:bg-emerald-600 transition-all transform hover:scale-105">Contact Me</a>
+                        <a href="#experience" class="border border-emerald-500 text-emerald-500 px-6 py-3 rounded-md hover:bg-emerald-500 hover:text-white transition-all transform hover:scale-105">View Experience</a>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <!--
+                        To embed your image directly into the website:
+                        1. Go to an online image to Base64 converter (like base64-image.de).
+                        2. Upload your photo.
+                        3. Copy the complete Base64 string that it generates.
+                        4. Paste the entire string inside the quotes for the src="..." attribute below, replacing the placeholder data.
+                    -->
+                    <img src="data:image/jpeg;base64,<!-- PASTE YOUR BASE64 IMAGE STRING HERE -->" alt="Siddhesh Dandekar" class="rounded-full w-64 h-64 md:w-96 md:h-96 object-cover border-4 border-emerald-500 shadow-lg shadow-emerald-500/20">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 animated-section">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title inline-block">About Me</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="md:col-span-2 space-y-4 text-slate-300">
+                    <p>
+                        I am a seasoned Salesforce professional with a Master's degree in Computer Science and a passion for tackling complex challenges. My journey in the Salesforce ecosystem has seen me grow from a Developer to an Engineering Lead and Architect, delivering high-impact projects for leading companies like Databricks, Proofpoint, and Deloitte.
+                    </p>
+                    <p>
+                        My expertise lies in developing and optimizing applications across various Salesforce clouds, including Sales, Service, Experience, and CPQ. I am adept at leading integrations, enhancing system performance, and ensuring robust security models. I thrive in collaborative environments and leverage modern tools like Cursor AI and GitHub Copilot to accelerate development and deliver exceptional results.
+                    </p>
+                    <p>
+                        I am driven by a desire to create solutions that not only meet business requirements but also provide a seamless and efficient user experience.
+                    </p>
+                </div>
+                <div class="glass-effect p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4 text-white">Education</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="font-semibold">Binghamton University, SUNY</p>
+                            <p class="text-sm text-slate-400">Master's in Computer Science</p>
+                            <p class="text-xs text-slate-500">2016 - 2018</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Vishwakarma Institute of Technology</p>
+                            <p class="text-sm text-slate-400">Bachelor of Technology in Computer Engineering</p>
+                            <p class="text-xs text-slate-500">2010 - 2013</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 animated-section">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title inline-block">Work Experience</h2>
+            <div class="relative border-l-2 border-emerald-500/30 ml-4">
+                <div class="mb-8 pl-8 relative">
+                    <div class="absolute -left-4 top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-gray-900"></div>
+                    <p class="text-sm text-emerald-400">Mar 2025 - Present</p>
+                    <h3 class="text-xl font-semibold">Sr. Salesforce Developer</h3>
+                    <p class="text-slate-400">Databricks, Inc., Mountain View, CA</p>
+                    <p class="mt-2 text-slate-400">
+                        Key contributor to the development and optimization of Sales Cloud and CPQ applications. Improved code maintainability by implementing Apex design patterns and enhanced security by transitioning major objects to a private sharing model. Designed and customized critical CPQ logic.
+                    </p>
+                </div>
+                <div class="mb-8 pl-8 relative">
+                    <div class="absolute -left-4 top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-gray-900"></div>
+                    <p class="text-sm text-emerald-400">Dec 2020 - Mar 2025</p>
+                    <h3 class="text-xl font-semibold">Salesforce Engineering Lead</h3>
+                    <p class="text-slate-400">Proofpoint, Inc., Sunnyvale, CA</p>
+                     <p class="mt-2 text-slate-400">
+                        Led development across Experience, Service, and Sales Clouds. Spearheaded the successful integration of the Impartner Partner Portal with Salesforce CPQ and managed a complex cross-company integration with distributor systems. Drove efficiency by implementing Territory Management and Omni-Channel Skills-Based Routing.
+                    </p>
+                </div>
+                <div class="mb-8 pl-8 relative">
+                    <div class="absolute -left-4 top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-gray-900"></div>
+                    <p class="text-sm text-emerald-400">Feb 2019 - Dec 2020</p>
+                    <h3 class="text-xl font-semibold">Sr. Salesforce Developer</h3>
+                    <p class="text-slate-400">Deloitte Consulting LLP, Gilbert, AZ</p>
+                    <p class="mt-2 text-slate-400">
+                        Significantly improved application performance by refactoring legacy triggers, resulting in a 40% boost. Developed a custom planner app that increased telesales call frequency by 30% and an integrated app that drastically reduced user research time. Specialized in creating custom solutions with Lightning Web Components.
+                    </p>
+                </div>
+                <div class="mb-8 pl-8 relative">
+                    <div class="absolute -left-4 top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-gray-900"></div>
+                    <p class="text-sm text-emerald-400">June 2018 - Feb 2019</p>
+                    <h3 class="text-xl font-semibold">Salesforce Developer</h3>
+                    <p class="text-slate-400">Cognizant Technology Solutions, Phoenix, AZ</p>
+                    <p class="mt-2 text-slate-400">
+                        Developed and maintained a healthcare-focused Salesforce application on the Service Cloud platform. Responsible for custom development, REST API integrations, and adhering to best practices to ensure system productivity and scalability.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 animated-section">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title inline-block">Personal Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-effect p-6 rounded-lg hover:border-emerald-500 transition-all transform hover:-translate-y-2">
+                    <h3 class="text-xl font-semibold text-white">Salesforce & Twilio Integration</h3>
+                    <p class="text-slate-400 mt-2">Used MuleSoft and PushTopics (Streaming API) to connect Salesforce with Twilio for real-time communication.</p>
+                </div>
+                <div class="glass-effect p-6 rounded-lg hover:border-emerald-500 transition-all transform hover:-translate-y-2">
+                    <h3 class="text-xl font-semibold text-white">Salesforce & YouTube API</h3>
+                    <p class="text-slate-400 mt-2">Built a solution using LWC, Apex, and Iframe to integrate Salesforce with the YouTube API.</p>
+                </div>
+                <div class="glass-effect p-6 rounded-lg hover:border-emerald-500 transition-all transform hover:-translate-y-2">
+                    <h3 class="text-xl font-semibold text-white">Salesforce & Authorize.net</h3>
+                    <p class="text-slate-400 mt-2">Created an integration for processing online payments within Salesforce using Authorize.net.</p>
+                </div>
+                <div class="glass-effect p-6 rounded-lg hover:border-emerald-500 transition-all transform hover:-translate-y-2">
+                    <h3 class="text-xl font-semibold text-white">Salesforce & Weather API</h3>
+                    <p class="text-slate-400 mt-2">Developed a feature to fetch and display location-based weather information within Salesforce.</p>
+                </div>
+                <div class="glass-effect p-6 rounded-lg hover:border-emerald-500 transition-all transform hover:-translate-y-2">
+                    <h3 class="text-xl font-semibold text-white">Salesforce & Google Address API</h3>
+                    <p class="text-slate-400 mt-2">Integrated Google's Address API for real-time address validation and auto-completion.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Skills & Certifications Section -->
+        <section id="skills" class="py-20 animated-section">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title inline-block">Skills & Certifications</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-white text-center">Technical Skills</h3>
+                    <div class="flex flex-wrap gap-3 justify-center">
+                        <span class="bg-slate-700 text-slate-300 px-4 py-2 rounded-full">Apex</span>
+                        <span class="bg-slate-700 text-slate-300 px-4 py-2 rounded-full">LWC</span>
+                        <span class="bg-slate-700 text-slate-300 px-4 py-2 rounded-full">Aura</span>
+                        <span class="bg-slate-700 text-slate-300 px-4 py-2 rounded-full">Visualforce</span>
+                        <span class="bg-slate-700 text-slate-300 px-4 py-2 rounded-full">Sales Cloud</span>
+                        <span class="bg-slate-700 text-slate-300 px-4 py-2 rounded-full">Service Cloud</span>
+                        <span class="bg-slate-700 text-slate-300 px-4 py-2 rounded-full">Experience Cloud</span>
+                        <span class="bg-slate-700 text-slate-300 px-4 py-2 rounded-full">CPQ</span>
+                        <span class="bg-slate-700 text-slate-300 px-4 py-2 rounded-full">Omni-Channel</span>
+                        <span class="bg-slate-700 text-slate-300 px-4 py-2 rounded-full">HTML</span>
+                        <span class="bg-slate-700 text-slate-300 px-4 py-2 rounded-full">JavaScript</span>
+                        <span class="bg-slate-700 text-slate-300 px-4 py-2 rounded-full">CSS</span>
+                        <span class="bg-slate-700 text-slate-300 px-4 py-2 rounded-full">Java</span>
+                        <span class="bg-slate-700 text-slate-300 px-4 py-2 rounded-full">Git</span>
+                        <span class="bg-slate-700 text-slate-300 px-4 py-2 rounded-full">Jira</span>
+                        <span class="bg-slate-700 text-slate-300 px-4 py-2 rounded-full">Cursor AI</span>
+                        <span class="bg-slate-700 text-slate-300 px-4 py-2 rounded-full">Github Copilot</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-white text-center">Certifications</h3>
+                    <div class="flex flex-wrap gap-3 justify-center">
+                        <span class="bg-emerald-500/20 text-emerald-300 px-4 py-2 rounded-full border border-emerald-500">Platform Developer I</span>
+                        <span class="bg-emerald-500/20 text-emerald-300 px-4 py-2 rounded-full border border-emerald-500">Platform Developer II</span>
+                        <span class="bg-emerald-500/20 text-emerald-300 px-4 py-2 rounded-full border border-emerald-500">Sharing and Visibility Architect</span>
+                        <span class="bg-emerald-500/20 text-emerald-300 px-4 py-2 rounded-full border border-emerald-500">Sales Cloud Consultant</span>
+                        <span class="bg-emerald-500/20 text-emerald-300 px-4 py-2 rounded-full border border-emerald-500">Application Architect</span>
+                        <span class="bg-emerald-500/20 text-emerald-300 px-4 py-2 rounded-full border border-emerald-500">Data Architect</span>
+                        <span class="bg-emerald-500/20 text-emerald-300 px-4 py-2 rounded-full border border-emerald-500">Salesforce Administrator</span>
+                        <span class="bg-emerald-500/20 text-emerald-300 px-4 py-2 rounded-full border border-emerald-500">Platform App Builder</span>
+                    </div>
+                    <div class="text-center mt-8">
+                        <a href="https://trailhead.salesforce.com/en/credentials/verification/" target="_blank" rel="noopener noreferrer" class="bg-emerald-500 text-white px-6 py-3 rounded-md hover:bg-emerald-600 transition-all transform hover:scale-105 inline-block">
+                            Verify Credentials
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Passions Section -->
+        <section id="passions" class="py-20 animated-section">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title inline-block">Passions & Interests</h2>
+            <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="glass-effect p-6 rounded-lg hover:border-emerald-500 transition-all transform hover:-translate-y-2 flex flex-col">
+                    <img src="https://cdn.londonandpartners.com/asset/lords-cricket-ground-and-lords-tour_lords-cricket-ground-photo-jed-leicester-image-courtesy-of-the-marylebone-cricket-club-mcc_76bca207c35df2046e533d96952eeffd.jpg" alt="Lord's Cricket Ground" class="rounded-md object-cover h-48 w-full">
+                    <h3 class="text-xl font-semibold text-white mt-4">Cricket</h3>
+                    <p class="text-slate-400 mt-2 flex-grow">A lifelong passion for the strategy and history of cricket, epitomized by the iconic Lord's Ground.</p>
+                </div>
+                <div class="glass-effect p-6 rounded-lg hover:border-emerald-500 transition-all transform hover:-translate-y-2 flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?q=80&w=2070&auto=format&fit=crop" alt="Person travelling" class="rounded-md object-cover h-48 w-full">
+                    <h3 class="text-xl font-semibold text-white mt-4">Travelling</h3>
+                    <p class="text-slate-400 mt-2 flex-grow">Discovering new cultures, cuisines, and landscapes around the globe.</p>
+                </div>
+                <div class="glass-effect p-6 rounded-lg hover:border-emerald-500 transition-all transform hover:-translate-y-2 flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=2787&auto=format&fit=crop" alt="A healthy meal" class="rounded-md object-cover h-48 w-full">
+                    <h3 class="text-xl font-semibold text-white mt-4">Cooking</h3>
+                    <p class="text-slate-400 mt-2 flex-grow">Experimenting with flavors and creating delicious meals is my favorite way to unwind.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 text-center animated-section">
+            <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto mb-8">
+                I'm always open to connecting with fellow professionals and discussing technology. Whether you have a question or just want to say hi, feel free to reach out.
+            </p>
+            <div class="inline-block glass-effect p-8 rounded-lg">
+                <div class="flex items-center justify-center space-x-4 mb-4">
+                    <p class="text-lg text-white">Siddhesh Dandekar</p>
+                    <a href="https://www.linkedin.com/in/siddhesh-dandekar-91841a3b/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-emerald-400 transition-colors">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+                        </svg>
+                    </a>
+                </div>
+                <a href="mailto:sdandek2@binghamton.edu" class="text-emerald-400 hover:underline">sdandek2@binghamton.edu</a>
+                <p class="text-slate-400 mt-2">(607) 338-8435</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 relative z-10">
+        <div class="container mx-auto px-6 py-6 text-center text-slate-500">
+             <div class="flex justify-center items-center space-x-4 mb-4">
+                <a href="https://www.linkedin.com/in/siddhesh-dandekar-91841a3b/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-emerald-400 transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+                    </svg>
+                    <span class="sr-only">LinkedIn</span>
+                </a>
+            </div>
+            <p>&copy; 2025 Siddhesh Dandekar. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Mobile menu toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
+        for (let link of mobileMenuLinks) {
+            link.addEventListener('click', () => {
+                if (!mobileMenu.classList.contains('hidden')) {
+                   mobileMenu.classList.add('hidden');
+                }
+            });
+        }
+
+        // --- Scroll-triggered animations ---
+        const animatedSections = document.querySelectorAll('.animated-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        animatedSections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+
+</body>
+</html>
